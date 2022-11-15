@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Answer {
+public class Options {
 	@Id
 	@GeneratedValue
 	private int id;
@@ -14,7 +14,7 @@ public class Answer {
 	@ManyToOne
 	private Questions questionId;
 	private boolean isAnswer;
-	public Answer() {
+	public Options() {
 		super();
 	}
 

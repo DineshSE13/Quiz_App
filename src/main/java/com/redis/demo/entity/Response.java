@@ -5,18 +5,18 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "quiz")
-public class Quiz {
+public class Response 
+{
 	@Id
 	@GeneratedValue
 	private int id;
-	@OneToMany(mappedBy = "quiz")
-	private List<Users> userId;
-	private String createdTime;
-	@OneToMany(mappedBy = "quizId")
-	private List<Questions> question;
+	@ManyToOne
+	private Test test;
+	@ManyToOne
+	private Questions question;
+	private String selectedanswer;
 }

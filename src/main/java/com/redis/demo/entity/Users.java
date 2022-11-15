@@ -1,5 +1,7 @@
 package com.redis.demo.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,6 +16,9 @@ public class Users {
 	private int id;
 	private String name;
 	private String email;
-	@ManyToOne
-	private Quiz quiz;
+	@OneToMany(mappedBy = "userId")
+	private List<Test> quiz;
+	@OneToMany(mappedBy = "userName")
+	private List<Result> resultId;
+	
 }
